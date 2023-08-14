@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Recognition Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding-top: 200px;
+            /* background-color:blue; */
+        }
+        h1 {
+            color: blue;
+        }
+
+        p {
+            color: black;
+            font-weight: bold;
+            padding-top:  50px;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .waveform {
+            border: 1px solid white;
+            padding: 10px;
+            margin: 20px auto;
+        }
+        .btn {
+            border: 2px solid gray;
+            color: gray;
+            background-color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Emotion Recognition Result</h1>
+    <div class="container">
+        <audio controls>
+            <source src="{{ url_for('static', filename='uploads/' + uploaded_file) }}" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <!-- <div class="waveform">
+            <img src="{{ url_for('static', filename=waveform_image) }}" alt="Waveform">
+        </div> -->
+    </div>
+    <p>Predicted Emotion: {{ predicted_emotion }}</p>
+    <div class="container">
+        <a href="/">Back to Upload</a>
+    </div>
+</body>
+</html>
