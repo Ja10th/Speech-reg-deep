@@ -20,7 +20,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # Load the emotion recognition model
-model = load_model('/emotion_model.h5')
+model = load_model('https://github.com/Ja10th/Speech-reg-deep/raw/main/emotion_model.h5')
 
 # Function to preprocess audio data
 def extract_mfcc(audio_file_path):
@@ -47,7 +47,7 @@ def analyze():
             return render_template('index.html', error="Invalid file. Only WAV files are allowed.")
 
 # Flask route for analyzing the uploaded audio
-@app.route('/templates/result/<filename>')
+@app.route('/result/<filename>')
 def result(filename):
     audio_file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     input_mfcc = extract_mfcc(audio_file_path)
