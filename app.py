@@ -47,7 +47,7 @@ def analyze():
             return render_template('index.html', error="Invalid file. Only WAV files are allowed.")
 
 # Flask route for analyzing the uploaded audio
-@app.route('/result/<filename>')
+@app.route('/templates/result/<filename>')
 def result(filename):
     audio_file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     input_mfcc = extract_mfcc(audio_file_path)
