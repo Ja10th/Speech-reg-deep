@@ -10,7 +10,7 @@ from keras.models import load_model
 app = Flask(__name__)
 
 # Directory where uploaded files will be stored
-UPLOAD_FOLDER = 'static/uploads'
+UPLOAD_FOLDER = '/static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Function to check if the file has an allowed extension
