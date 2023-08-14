@@ -20,7 +20,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # Load the emotion recognition model
-model = load_model('/Users/USER/Downloads/emotion_model.h5')
+model = load_model('/emotion_model.h5')
 
 # Function to preprocess audio data
 def extract_mfcc(audio_file_path):
