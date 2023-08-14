@@ -49,6 +49,7 @@ def analyze():
 # Flask route for analyzing the uploaded audio
 @app.route('/result/<filename>')
 def result(filename):
+    print(f"Processing result for filename: {filename}")  # Debugging statement
     audio_file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     input_mfcc = extract_mfcc(audio_file_path)
     input_mfcc = np.expand_dims(input_mfcc, axis=0)
@@ -56,6 +57,7 @@ def result(filename):
     predicted_emotion_index = np.argmax(model.predict(input_mfcc))
     emotion_labels = ['fear', 'angry', 'disgust', 'neutral', 'sad', 'ps', 'happy']
     predicted_emotion = emotion_labels[predicted_emotion_index]
+    print(f"Predicted emotion: {predicted_emotion}")  # Debugging statement
     return render_template('result.html', predicted_emotion=predicted_emotion, uploaded_file=filename)
 
 # Run the Flask app
