@@ -42,14 +42,14 @@
 <body>
     <h1>Emotion Recognition Result</h1>
     <div class="container">
-        <audio controls>
-            <source src="{{ url_for('static', filename='uploads/' + uploaded_file) }}" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-        
-        <!-- <div class="waveform">
-            <img src="{{ url_for('static', filename=waveform_image) }}" alt="Waveform">
-        </div> -->
+       <audio controls>
+    <source src="{{ url_for('static', filename='uploads/' + uploaded_file) }}" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+<div class="waveform">
+    <img src="{{ url_for('static', filename='waveform.png') }}" alt="Waveform">
+</div>
+
     </div>
     <p>Predicted Emotion: {{ predicted_emotion }}</p>
     <div class="container">
