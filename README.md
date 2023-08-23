@@ -14,7 +14,7 @@ Welcome to the Speech Emotion Recognition System local installation guide. This 
 1. Clone the Repository:
 If you have Git installed, you can clone the repository using the following command:
 
-git clone https://github.com/your-username/speech-emotion-recognition.git
+git clone [https://github.com/your-username/speech-emotion-recognition.git](https://github.com/Ja10th/Speech-reg-deep)
 
 Alternatively, you can download the repository as a ZIP file and extract it to your desired location.
 
